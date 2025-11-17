@@ -1,0 +1,281 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #1b5e20;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:focus,
+nav a:hover {
+  outline: 3px solid #66bb6a;
+  text-decoration: underline;
+}
+
+/* Botões primários */
+.btn-primary {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:focus {
+  outline: 3px solid #2e7d32;
+}
+
+.btn-primary:hover {
+  background-color: #66bb6a;
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  background-color: #e8f5e9;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Toggle formulário voluntário */
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.volunteer-form {
+  display: none;
+  margin-top: 1.5rem;
+  background-color: #f1f8e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.toggle-checkbox:checked ~ .volunteer-form {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Formulários gerais */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Input Reais (R$) */
+.input-reais {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.input-reais span {
+  background-color: #e0e0e0;
+  padding: 0.75rem;
+  border-radius: 5px 0 0 5px;
+  font-weight: bold;
+}
+
+.input-reais input {
+  flex: 1;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #aaa;
+  padding: 0.75rem;
+}
+
+/* Blocos de conteúdo */
+.bloco {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #1b5e20;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Seção Doação */
+.doacao {
+  background-color: #f1f8e9;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1b5e20;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .volunteer-form {
+    padding: 2rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
